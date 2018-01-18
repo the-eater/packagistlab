@@ -41,12 +41,11 @@ server {
         include        fastcgi.conf;
         try_files $uri =404;
     }
-}
-    </pre>
+}</pre>
 </details>
 
 To create a seed `packages.json` you can go to `https://composer.my.domain/gitlab-callback.php?secret=<YOUR-SECRET>` or run `php public/gitlab-callback.php "<YOUR-SECRET>"`
 
 Now in your gitlab instance, go to "Admin" > "System Hooks" and add `https://composer.my.domain/gitlab-callback.php?secret=<YOUR-SECRET>` for Push and Tag Push events.
 
-Once you've done that. it should all automatically and you can run on your own desktop or wherever `composer config --global repositories.my-domain composer https://composer.my.domain/` to add this packagist repo.
+Once you've done that. it should all automatically work, and you add this packagist repo by running `composer config --global repositories.my-domain composer https://composer.my.domain/`.
