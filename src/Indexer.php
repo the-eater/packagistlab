@@ -102,7 +102,7 @@ class Indexer
         if ($project['visibility'] === 'public') {
             $package['dist'] = [
                 'type' => 'zip',
-                'url' => 'https://gl.zt.je/eater/shoarma/repository/' . urlencode($object['name']) . '/archive.zip',
+                'url' => 'https://gl.zt.je/' . $project['path_with_namespace']  . '/repository/' . urlencode($object['name']) . '/archive.zip',
                 'reference' => $object['commit']['id'],
                 'shasum' => "",
             ];
