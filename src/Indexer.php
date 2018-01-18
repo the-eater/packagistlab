@@ -97,12 +97,16 @@ class Indexer
             'reference' => $object['commit']['id']
         ];
 
-        $package['dist'] = [
-            'type' => 'zip',
-            'url' => 'https://gl.zt.je/eater/shoarma/repository/' . urlencode($object['name']) . '/archive.zip',
-            'reference' => $object['commit']['id'],
-            'shasum' => "",
-        ];
+        $package['dist'] = null;
+
+        if ($project['visibility'] === 'public') {
+            $package['dist'] = [
+                'type' => 'zip',
+                'url' => 'https://gl.zt.je/eater/shoarma/repository/' . urlencode($object['name']) . '/archive.zip',
+                'reference' => $object['commit']['id'],
+                'shasum' => "",
+            ];
+        }
 
         return [$package['name'] => [$package['version'] => $package]];
     }
