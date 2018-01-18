@@ -1,0 +1,15 @@
+{
+    "name": "eater/packagistlab",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "composer/semver": "^1.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "eater",
+            "email": "hello@eaterofco.de"
+        }
+    ]
+}
